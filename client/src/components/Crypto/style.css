@@ -1,0 +1,12 @@
+.crypto-box {
+  background-image: url("./image/thumb-1920-891050.jpg");
+  height: 50vh;
+  min-height: 40rem;
+  padding-top: 4.5rem;
+  padding-bottom: 0;
+}
+
+.cryptext {
+  margin-left: 100px;
+  font-size: 36px;
+}
