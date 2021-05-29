@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function Saved () {
+class Saved extends Component {
+    render() {
     return(
         <div>
         </div>
     )
+}
 }
 
 export default Saved;
