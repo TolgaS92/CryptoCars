@@ -5,3 +5,10 @@
   padding-top: 4.5rem;
   padding-bottom: 0;
 }
+
+.login-form {
+  width: 250px;
+  height: 50vh;
+  margin-top: 200px;
+  margin-bottom: 250px;
+}
