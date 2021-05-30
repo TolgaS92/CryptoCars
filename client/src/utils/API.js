@@ -4,7 +4,7 @@ export default {
 
   // Gets the books from Google
   getCarInfo: function (query) {
-    return axios.get(`http://marketvalue.vinaudit.com/getmarketvalue.php?key=VA_DEMO_KEY&vin=${query}&format=json`);
+    return axios.get(`https://marketvalue.vinaudit.com/getmarketvalue.php?key=VA_DEMO_KEY&vin=${query}&format=json`);
   },
   // Gets all books
   getCars: function () {
