@@ -9,6 +9,9 @@ class Search extends Component {
         result: []
     }
 
+    componentDidMount ()  {
+        this.searchCar("1VXBR12EXCP901213");
+    }
     searchCar = (query) => {
         API.getCarInfo(query)
         .then((res) => this.setState({ result: res.data }))
