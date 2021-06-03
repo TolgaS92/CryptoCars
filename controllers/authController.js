@@ -9,6 +9,7 @@ const createToken = (user) => {
   return jwt.sign(
     {
       sub: user.id,
+      name: user.name,
       email: user.email,
       iss: "auth.dubc",
       aud: "auth.dubc",

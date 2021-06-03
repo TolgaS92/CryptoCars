@@ -46,6 +46,7 @@ const SignIn = () => {
   const [signInSuccess, setSignInSuccess] = useState();
   const [signInError, setSignInError] = useState();
   const [redirectOnSignIn, setRedirectOnSignIn] = useState(false);
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   // eslint-disable-next-line no-unused-vars
@@ -56,7 +57,7 @@ const SignIn = () => {
       const url = "http://localhost:3001/auth";
       const fetchResponse = await fetch(url, {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
-        mode: "cors", // no-cors, *cors, same-origin
+        mode: "no-cors", // no-cors, *cors, same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
         credentials: "same-origin", // include, *same-origin, omit
         headers: {
@@ -84,7 +85,7 @@ const SignIn = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    submitCredentials({ email, password });
+    submitCredentials({ name ,email, password });
   };
 
   return (
@@ -102,6 +103,18 @@ const SignIn = () => {
           {signInSuccess && <h1>success</h1>}
           {signInError && <h1>Error: {signInError} </h1>}
           <form className={classes.form} noValidate onSubmit={handleSubmit}>
+          <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="name"
+              label="First Name"
+              name="name"
+              onChange={(e) => setName(e.target.value.trim())}
+              autoComplete="name"
+              autoFocus
+            />
             <TextField
               variant="outlined"
               margin="normal"
