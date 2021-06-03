@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default {
+export default  {
 
   // Gets the books from Google
   getCarInfo: function (query) {
