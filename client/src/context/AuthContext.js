@@ -29,7 +29,7 @@ const AuthProvider = ({ children }) => {
     });
   };
 
-  const logout = () => {
+  const logout = () => {  
     localStorage.removeItem("token");
     localStorage.removeItem("userInfo");
     localStorage.removeItem("expiresAt");

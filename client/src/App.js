@@ -19,9 +19,9 @@ const UnauthenticatedRoutes = () => (
   <>
     <Switch>
       <Route path="/">
-        <Main />
+        <Login />
       </Route>
-      <Route path="/Login">
+      <Route path="/login">
         <Login />
       </Route>
     </Switch>
@@ -32,6 +32,9 @@ const AppRoutes = () => {
     <>
       <Suspense fallback={<h1>Loading...</h1>}>
         <Switch>
+        <AuthenticatedRoute path="/search">
+            <Main />
+          </AuthenticatedRoute>
           <AuthenticatedRoute path="/search">
             <Search />
           </AuthenticatedRoute>
