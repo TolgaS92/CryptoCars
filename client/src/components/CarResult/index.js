@@ -1,23 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './style.css';
 
-function CarResult (props) {
-    console.log(props);
+class CarResult extends Component {
+    state= {
+        searchedCar: []
+    }
+
+    
+    render(){
     return(
+        <div className="container">
         <div className="car-value-card">
-            <div className="card">
+            {this.state.searchedCar.map(results => (
+            <div className="card" key={results.id}>
                 <img src="#" alt="car" />
                 <div className="card-body">
                     <h5 className="card-title">
-                        {props.result.id}
+                        {results.vehicle}
                     </h5>
-                    <p className="card-text">Vin Number: {props.result.vin}</p>
-                    <p className="card-text">MileAge: {props.result.mileage} miles</p>
-                    {/* <p className="card-text">Average Price: {props.result.prices}</p> */}
+                    <p className="card-text">Vin Number: {results.vin}</p>
+                    <p className="card-text">Mileage: {results.mileage} miles</p>
+                    <p className="card-text">Average Price: {results.prices.average} $</p>
                 </div>
             </div>
+            ))}
+        </div>
         </div>
     )
 }
-
+}
 export default CarResult;
