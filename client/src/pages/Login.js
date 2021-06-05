@@ -53,6 +53,7 @@ const SignIn = () => {
   const [remember, setRemember] = useState(false);
 
   const submitCredentials = async (credentials) => {
+    console.log(credentials);
     try {
       const url = "http://localhost:3001/auth";
       const fetchResponse = await fetch(url, {
