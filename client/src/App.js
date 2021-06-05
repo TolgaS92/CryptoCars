@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 import Navbar from './components/Navbar';
 import Wrapper from './components/Wrapper';
 import Footer from './components/Footer';
+import Signup from './components/Signup';
 import Search from './pages/Search';
 import Saved from './pages/Saved';
 import Main from './pages/Main';
@@ -18,8 +19,8 @@ const AuthenticatedRoute = ({ children, ...rest }) => {
 const UnauthenticatedRoutes = () => (
   <>
     <Switch>
-      <Route path="/">
-        <Login />
+      <Route exact path="/">
+        <Signup />
       </Route>
       <Route path="/login">
         <Login />
