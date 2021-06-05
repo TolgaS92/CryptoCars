@@ -11,7 +11,7 @@ function Signup () {
                 <label className="col-sm-12">E-mail: </label>
                 <input  className="col-sm-5" />
                 <label className="col-sm-12">Password: </label>
-                <input className="col-sm-5  " />
+                <input type="password" className="col-sm-5  " />
                 <hr className="col-sm-6" />
                 <p>If you have an account! <span>Login</span></p>
                 <button className="btn btn-warning btn-outline-dark">Create an Account</button>
