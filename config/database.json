@@ -1,7 +1,7 @@
 {
     "development": {
       "database": {
-        "url": "mongodb://localhost/node-react-auth",
+        "url": "mongodb://localhost/CryptoCars",
         "options": {
           "useNewUrlParser": true,
           "useUnifiedTopology": true,
@@ -11,7 +11,7 @@
     },
     "test": {
       "database": {
-        "url": "mongodb://localhost/node-react-auth_test",
+        "url": "mongodb://localhost/CryptoCars_test",
         "options": {
           "useNewUrlParser": true,
           "useUnifiedTopology": true,
@@ -21,7 +21,7 @@
     },
     "production": {
       "database": {
-        "url": "mongodb://localhost/node-react-auth_production",
+        "url": "mongodb://localhost/CryptoCars_production",
         "options": {
           "useNewUrlParser": true,
           "useUnifiedTopology": true,

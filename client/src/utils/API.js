@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default  {
+const API = {
 
   // Gets the books from Google
   getCarInfo: function (query) {
@@ -20,3 +20,5 @@ export default  {
     return axios.post("/api/cars", carData);
   }
 };
+
+export default API;
