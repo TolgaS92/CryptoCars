@@ -5,7 +5,8 @@ const Userapi = {
     //   return axios.get("/api/user/" + id);
     // },
     saveUser: function(userData) {
-      return axios.post("/api/user", userData);
+      console.log(userData);
+      return axios.post("/", userData);
     }
   };
   
