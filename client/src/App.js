@@ -9,6 +9,7 @@ import Saved from './pages/Saved';
 import Main from './pages/Main';
 import Login from './pages/Login';
 import { AuthProvider, AuthContext } from "./context/AuthContext";
+import AboutPage from './pages/AboutPage';
 import About from './components/About';
 
 const AuthenticatedRoute = ({ children, ...rest }) => {
@@ -27,11 +28,13 @@ const UnauthenticatedRoutes = () => (
         <Login />
       </Route> */}
       <Route exact path="/">
-        <About/>
         <Search />
       </Route>
       <Route path="/search">
         <Search />
+      </Route>
+      <Route path="/about">
+        <About />
       </Route>
     </Switch>
   </>

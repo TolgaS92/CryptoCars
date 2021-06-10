@@ -14,6 +14,9 @@ function Navbar () {
                 <li className="nav-item">
                 <a className="nav-link text-white" href="/saved">Saved Cars</a>
                 </li>
+                <li className="nav-item">
+                <a className="nav-link text-white" href="/about">About the MERNers</a>
+                </li>
             </ul>
         </nav>
     )
