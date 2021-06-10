@@ -1,9 +1,9 @@
-// module.exports ={
-//   CarInfo: require("./CarInfo"),
-//   User: require("./User")
-// };
+ module.exports ={
+   CarInfo: require("./CarInfo"),
+   User: require("./User")
+};
 
-const fs = require('fs');
+/* const fs = require('fs');
 const path = require('path');
 const Mongoose = require('mongoose');
 const basename = path.basename(__filename);
@@ -39,5 +39,5 @@ const models = db();
 const mongoose = Mongoose;
 
 module.exports = mongoose;
-module.exports.default = models;
+module.exports.default = models; */
 // module.export = { CarInfo: require("./CarInfo")};
