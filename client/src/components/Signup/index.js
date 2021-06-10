@@ -27,7 +27,9 @@ function handleInputChange(event) {
 
 
     return(
-            <form className="col-sm-5 sign-up-form">
+      <div>
+        <h1 align="center">Create a new account</h1>
+            <form className="col-sm-12 sign-up-form" align="center">
                 <label  className="col-sm-12">Name: </label>
                 <input  className="col-sm-5" onChange={handleInputChange} name="name"/>
                 <label className="col-sm-12">Email: </label>
@@ -35,8 +37,11 @@ function handleInputChange(event) {
                 <label className="col-sm-12">Password: </label>
                 <input type="password" className="col-sm-5" onChange={handleInputChange} name="password"/>
                 <hr className="col-sm-6" />
-                <button className="btn btn-warning btn-outline-dark" onClick={handleFormSubmit}>Create an Account</button>
+                <button className="btn btn-warning btn-outline-dark" onClick={handleFormSubmit}>Sign Up</button>
+                <br/>
             </form>
+          <br/>
+            </div>
     )
 }
 
