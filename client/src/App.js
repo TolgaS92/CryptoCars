@@ -19,11 +19,14 @@ const AuthenticatedRoute = ({ children, ...rest }) => {
 const UnauthenticatedRoutes = () => (
   <>
     <Switch>
-      <Route exact path="/">
-        <Signup />
-      </Route>
-      <Route path="/login">
+      <Route exact path="/login">
         <Login />
+      </Route>
+      {/* <Route path="/login">
+        <Login />
+      </Route> */}
+      <Route path="/">
+        <Search />
       </Route>
     </Switch>
   </>
