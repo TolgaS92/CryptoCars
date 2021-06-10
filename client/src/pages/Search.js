@@ -10,7 +10,7 @@ class Search extends Component {
     }
 
     componentDidMount ()  {
-        this.searchCar("1VXBR12EXCP901213");
+        this.searchCar();
     }
     searchCar = (query) => {
         API.getCarInfo(query)
@@ -37,15 +37,15 @@ class Search extends Component {
             <div className="row">
                 <div className="col-sm-4">
                 <VinSearch
-            search={this.state.search}
-            handleFormSubmit={this.handleFormSubmit}
-            handleInputChange={this.handleInputChange}
-            />
+                search={this.state.search}
+                handleFormSubmit={this.handleFormSubmit}
+                handleInputChange={this.handleInputChange}
+                />
                 </div>
                 <div className="col-sm-6">
                 <CarResult
-            result={this.state.result}
-            />
+                result={this.state.result}
+                />
                 </div>
             </div>
         </div>
