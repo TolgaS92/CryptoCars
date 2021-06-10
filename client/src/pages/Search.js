@@ -12,6 +12,8 @@ class Search extends Component {
     componentDidMount ()  {
         this.searchCar();
     }
+
+    
     searchCar = (query) => {
         API.getCarInfo(query)
         .then((res) => this.setState({ result: res.data }))

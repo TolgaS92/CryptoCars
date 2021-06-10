@@ -1,7 +1,9 @@
 const router = require("express").Router();
 const { authPerson } = require("../controllers/authController");
 const userRoute = require('./users')
+const apiRoutes = require("./api");
 
+router.use("/api", apiRoutes);
 router.post("/auth", authPerson);
 router.post("/", userRoute);
 
