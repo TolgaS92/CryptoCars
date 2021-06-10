@@ -10,7 +10,6 @@ import Main from './pages/Main';
 import Login from './pages/Login';
 import { AuthProvider, AuthContext } from "./context/AuthContext";
 import AboutPage from './pages/AboutPage';
-import About from './components/About';
 
 const AuthenticatedRoute = ({ children, ...rest }) => {
   const auth = useContext(AuthContext);
@@ -21,20 +20,23 @@ const AuthenticatedRoute = ({ children, ...rest }) => {
 const UnauthenticatedRoutes = () => (
   <>
     <Switch>
+    <Route exact path="/">
+        <Main />
+      </Route>
       <Route exact path="/login">
         <Login />
       </Route>
       {/* <Route path="/login">
         <Login />
       </Route> */}
-      <Route exact path="/">
+      <Route exact path="/search">
         <Search />
       </Route>
-      <Route path="/search">
-        <Search />
+      <Route exact path="/saved">
+        <Saved />
       </Route>
-      <Route path="/about">
-        <About />
+      <Route exact path="/about">
+        <AboutPage />
       </Route>
     </Switch>
   </>
@@ -44,7 +46,7 @@ const AppRoutes = () => {
     <>
       <Suspense fallback={<h1>Loading...</h1>}>
         <Switch>
-       
+          <UnauthenticatedRoutes />
           <AuthenticatedRoute path="/saved">
             <Saved />
           </AuthenticatedRoute>
