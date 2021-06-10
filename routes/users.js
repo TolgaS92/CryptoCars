@@ -7,3 +7,12 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
+
+/* const usersController = require("../controllers/usersController");
+const router = require("express").Router();
+
+router.route("/")
+  .post(usersController.create);
+
+
+  module.exports = router; */

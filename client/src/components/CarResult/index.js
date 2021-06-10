@@ -1,32 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './style.css';
 
-class CarResult extends Component {
-    state= {
-        searchedCar: []
-    }
-
-    
-    render(){
+function CarResult (props) {
+    console.log(props);
     return(
-        <div className="container">
         <div className="car-value-card">
-            {this.state.searchedCar.map(results => (
-            <div className="card" key={results.id}>
-                <img src="#" alt="car" />
+            <div className="card">
+                <img className="car-img" src="https://cdn1.iconfinder.com/data/icons/classic-cars-by-cemagraphics/512/camaro_512.png" alt="car" />
                 <div className="card-body">
                     <h5 className="card-title">
-                        {results.vehicle}
+                        {props.result.vehicle}
                     </h5>
-                    <p className="card-text">Vin Number: {results.vin}</p>
-                    <p className="card-text">Mileage: {results.mileage} miles</p>
-                    <p className="card-text">Average Price: {results.prices.average} $</p>
+                    <p className="card-text">Vin Number: {props.result.vin}</p>
+                    <p className="card-text">MileAge: {props.result.mileage} miles</p>
+                    <p className="card-text">Average Price: {props.result.mean} $</p>
                 </div>
             </div>
-            ))}
-        </div>
         </div>
     )
 }
-}
+
 export default CarResult;

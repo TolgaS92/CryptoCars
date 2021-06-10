@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
+const Schema = mongoose.Schema;
 // const Schema = mongoose.Schema;
 
 // const UserSchema = new Schema (
@@ -34,7 +35,7 @@ const bcrypt = require('bcrypt');
 
 
 module.exports = (mongoose) => {
-  const userSchema = new mongoose.Schema(
+  const userSchema = new Schema(
     {
       name: {
         type: String,

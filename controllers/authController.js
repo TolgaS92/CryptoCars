@@ -35,6 +35,7 @@ const authPerson = async (req, res) => {
     console.log(`email: ${email}, password: ${password}`);
     console.log("person pwd", person);
 
+    
     const passwordValid = await verifyPassword(password, person[0].password);
     console.log("21");
     if (passwordValid) {
