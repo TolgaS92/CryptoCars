@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
-import Userapi from '../../utils/user'
+import API from '../../utils/API'
 
 function Signup () {
 
@@ -15,13 +15,13 @@ function handleInputChange(event) {
   function handleFormSubmit(event) {
     event.preventDefault();
     if (userObject.name && userObject.email && userObject.password) {
-      Userapi.saveUser({
+      API.saveUser({
         name: userObject.name,
         email: userObject.email,
         password: userObject.password
       })
-        .then(res => alert("Thanks for signing up!"))
-        .catch(err => console.log(err));
+      .then(() => alert("Thanks for signing up!"))
+      .catch(err => console.log(err));
     }
   };
 

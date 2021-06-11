@@ -14,6 +14,10 @@ const API = {
   saveCar: function (carData) {
     console.log("I am in saved");
     return axios.post("/api/cars", carData);
+  },
+  saveUser: function(userData) {
+    console.log(userData);
+    return axios.post("api/users", userData);
   }
 };
 
