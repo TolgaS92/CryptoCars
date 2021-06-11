@@ -6,7 +6,7 @@ const Userapi = {
     // },
     saveUser: function(userData) {
       console.log(userData);
-      return axios.post("/", userData);
+      return axios.post("/api/users", userData);
     }
   };
   

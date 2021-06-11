@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
-import Userapi from '../../utils/user'
+import Userapi from '../../utils/user';
 
 function Signup () {
 
@@ -36,7 +36,7 @@ function handleInputChange(event) {
                 <input  className="col-sm-5" onChange={handleInputChange} name="email"/>
                 <label className="col-sm-12">Password: </label>
                 <input type="password" className="col-sm-5" onChange={handleInputChange} name="password"/>
-                <hr className="col-sm-6" />
+                <hr className="col-sm-12" />
                 <button className="btn btn-warning btn-outline-dark" onClick={handleFormSubmit}>Sign Up</button>
                 <br/>
             </form>

@@ -7,6 +7,7 @@ class CarResult extends Component {
     state = {
         savedCars: []
     }
+
     createCar = (car) => {
         return {
             carModel: car.vehicle,
@@ -15,36 +16,36 @@ class CarResult extends Component {
             mileage: car.mileage
         }
     }
-    handleSave = car => {  
 
-        if (this.state.savedCars.map(car => car._id).includes(car._id)) {
-            API.deletecar(car._id)
-                .then(deletedCar => this.setState({ savedCars: this.state.savedCars.filter(car => car._id !== deletedCar._id) }))
-                .catch(err => console.error(err));
-        } else {
+    handleSave = car => {
             alert("Saved!")
-            API.saveCar(car)
-                .then(cars => cars.map(car => this.createCar(car)))
-                .then(console.log(car))
+            API.saveCar({
+                id: car.id,
+                carModel: car.vehicle,
+                vin: car.vin,
+                price: car.mean,
+                mileage: car.mileage
+            })
                 .then(savedCar => this.setState({ savedCars: this.state.savedCars.concat([savedCar]) }))
                 .catch(err => console.error(err));
-        }
     }
 
     render(){
     return(
         <div className="car-value-card">
-            <div className="card">
+            <div className="card" key={this.props.carSearched.id}>
                 <img className="car-img" src="https://cdn1.iconfinder.com/data/icons/classic-cars-by-cemagraphics/512/camaro_512.png" alt="car" />
                 <div className="card-body">
                     <h5 className="card-title text-center">
-                        {this.props.result.vehicle}
+                        {this.props.carSearched.vehicle}
                     </h5>
                     <hr />
-                    <p className="card-text text-center">Vin Number: {this.props.result.vin}</p>
-                    <p className="card-text text-center">MileAge: {this.props.result.mileage} miles</p>
-                    <p className="card-text text-center">Average Price: {this.props.result.mean} $</p>
-                    <button className="btn btn-primary d-flex" onClick={() => this.handleSave(this.props.result)}>Save!</button>
+                    <p className="card-text text-center">Vin Number: {this.props.carSearched.vin}</p>
+                    <p className="card-text text-center">MileAge: {this.props.carSearched.mileage} miles</p>
+                    <p className="card-text text-center">Average Price: {this.props.carSearched.mean} $</p>
+                    <div className="d-flex justify-content-center">
+                        <button className="btn btn-primary d-flex" onClick={() => this.handleSave(this.props.carSearched)}>Save!</button>
+                    </div>
                 </div>
             </div>
         </div>
