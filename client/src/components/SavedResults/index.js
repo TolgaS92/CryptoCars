@@ -5,7 +5,10 @@ class SavedResults extends Component {
   state = {
     savedCars: [],
   };
-
+  loadCars () {
+    API.getCars()
+    .then((err) => console.log(err))
+  }
   // load saved cars when Saved page renders
   componentDidMount() {
     API.getCars()
@@ -14,10 +17,10 @@ class SavedResults extends Component {
   }
 
   // Function to handle deletion of cars
-  handleDeleteCar = id => {
+  handleDeleteCar = (id) =>  {
     alert("Deleted from the database just need to refresh")
     API.deleteCar(id)
-      .then(res => this.componentDidMount())
+      .then(res => this.loadCars(res))
       .catch(err => console.log(err));
   };
 
@@ -26,9 +29,9 @@ class SavedResults extends Component {
         <div>
             {this.props.car.length ? (
                     <div>
-                      {this.props.car.map(cars => (
-                        <div className="card mt-3 mb-3">
-                        <div className="card-body" key={cars._id}>
+                      {this.props.car.map((cars) => (
+                        <div className="card mt-3 mb-3" key={cars._id}>
+                        <div className="card-body">
                             <h5 className="card-title text-center">
                                 {cars.carModel}
                             </h5>
