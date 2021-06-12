@@ -89,7 +89,7 @@ const SignIn = () => {
 
   return (
     <>
-      {redirectOnSignIn && <Redirect to="/" />}
+      {redirectOnSignIn && <Redirect to="/search" />}
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <StyledPaper variant="elevation">

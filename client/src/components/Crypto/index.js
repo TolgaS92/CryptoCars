@@ -10,13 +10,13 @@ function Crypto () {
                         <a href="/search" className="text-decoration-none">
                         <h3 className="cryptext">
                         <i className="fab fa-bitcoin fa-4x"></i>
-                            How much is your car value get today!
+                            Get your car's value in crypto cryptocurrency today!
                         </h3>
                         </a>
                     </div>
                     <div className="col-sm-6">
                         <h3 className="cryptext">
-                            How is Working <i className="fas fa-question fa-4x"></i>
+                            What is the crypto Market like today? <i className="fas fa-question fa-4x"></i>
                         </h3>
                     </div>
                 </div>
