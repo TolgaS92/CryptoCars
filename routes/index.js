@@ -1,13 +1,11 @@
 const router = require("express").Router();
-const { authPerson } = require("../controllers/authController");
-const userRoute = require('./users')
 
-router.post("/auth", authPerson);
-router.post("/", userRoute);
+const apiRoutes = require("./api");
 
-/* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
-});
+router.use("/api", apiRoutes);
+
+router.use(function(req, res) {
+    res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  });
 
 module.exports = router;

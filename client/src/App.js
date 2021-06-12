@@ -27,14 +27,17 @@ const UnauthenticatedRoutes = () => (
       <Route exact path="/">
         <Main />
       </Route>
-      <Route path="/search">
-        <Search />
+      <Route exact path="/saved">
+        <Saved />
       </Route>
       <Route path="/signup">
         <Signup />
       </Route>
       <Route path="/about">
         <About />
+      </Route>
+      <Route path="/search">
+        <Search />
       </Route>
     </Switch>
   </>
@@ -44,7 +47,7 @@ const AppRoutes = () => {
     <>
       <Suspense fallback={<h1>Loading...</h1>}>
         <Switch>
-       
+          <UnauthenticatedRoutes />
           <AuthenticatedRoute path="/saved">
             <Saved />
           </AuthenticatedRoute>

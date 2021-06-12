@@ -1,7 +1,7 @@
-// module.exports ={
-//   CarInfo: require("./CarInfo"),
-//   User: require("./User")
-// };
+ module.exports ={
+   CarInfo: require("./CarInfo"),
+   User: require("./User")
+};
 
 const fs = require('fs');
 const path = require('path');

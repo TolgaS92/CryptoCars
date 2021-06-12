@@ -9,7 +9,7 @@ function Vinsearch (props) {
                 <label htmlFor="search">Search VIN:</label>
                 <input
                 onChange={props.handleInputChange}
-                value={props.search}
+                value={props.formObject}
                 name="search"
                 type="text"
                 className="form-control"

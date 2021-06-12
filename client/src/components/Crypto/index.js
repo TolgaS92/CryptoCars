@@ -7,10 +7,12 @@ function Crypto () {
             <div className="container">
                 <div className="row mt-5 pt-3">
                     <div className="col-sm-6">
+                        <a href="/search" className="text-decoration-none">
                         <h3 className="cryptext">
                         <i className="fab fa-bitcoin fa-4x"></i>
                             Get your car's value in crypto cryptocurrency today!
                         </h3>
+                        </a>
                     </div>
                     <div className="col-sm-6">
                         <h3 className="cryptext">
