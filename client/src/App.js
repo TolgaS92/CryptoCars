@@ -3,13 +3,13 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 import Navbar from './components/Navbar';
 import Wrapper from './components/Wrapper';
 import Footer from './components/Footer';
-// import Signup from './components/Signup';
+import Signup from './components/Signup';
 import Search from './pages/Search';
 import Saved from './pages/Saved';
 import Main from './pages/Main';
 import Login from './pages/Login';
 import { AuthProvider, AuthContext } from "./context/AuthContext";
-import AboutPage from './pages/AboutPage';
+// import AboutPage from './pages/AboutPage';
 import About from './components/About';
 
 const AuthenticatedRoute = ({ children, ...rest }) => {
@@ -21,17 +21,17 @@ const AuthenticatedRoute = ({ children, ...rest }) => {
 const UnauthenticatedRoutes = () => (
   <>
     <Switch>
-      <Route exact path="/login">
+      <Route exact path="/signin">
         <Login />
       </Route>
-      {/* <Route path="/login">
-        <Login />
-      </Route> */}
       <Route exact path="/">
-        <Search />
+        <Main />
       </Route>
       <Route path="/search">
         <Search />
+      </Route>
+      <Route path="/signup">
+        <Signup />
       </Route>
       <Route path="/about">
         <About />
