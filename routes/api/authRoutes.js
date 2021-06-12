@@ -4,6 +4,6 @@ const { authPerson } = require("../../controllers/authController");
 
 router.post("/", authPerson);
 
-router.get("/:id")
+router.get("/:id", authPerson);
 
 module.exports = router;
