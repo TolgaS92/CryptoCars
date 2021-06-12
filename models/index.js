@@ -1,8 +1,3 @@
- module.exports ={
-   CarInfo: require("./CarInfo"),
-   User: require("./User")
-};
-
 const fs = require('fs');
 const path = require('path');
 const Mongoose = require('mongoose');
@@ -40,4 +35,3 @@ const mongoose = Mongoose;
 
 module.exports = mongoose;
 module.exports.default = models;
-// module.export = { CarInfo: require("./CarInfo")};

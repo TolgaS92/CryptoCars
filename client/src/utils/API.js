@@ -13,6 +13,7 @@ const API = {
   },
   saveCar: function (carData) {
     console.log("I am in saved");
+    console.log(carData);
     return axios.post("/api/cars", carData);
   }
 };

@@ -19,6 +19,7 @@ class CarResult extends Component {
 
     handleSave = car => {
             alert("Saved!")
+            console.log(car);
             API.saveCar({
                 id: car.id,
                 carModel: car.vehicle,
@@ -26,6 +27,7 @@ class CarResult extends Component {
                 price: car.mean,
                 mileage: car.mileage
             })
+                .then(savedCar => console.log(savedCar))
                 .then(savedCar => this.setState({ savedCars: this.state.savedCars.concat([savedCar]) }))
                 .catch(err => console.error(err));
     }
