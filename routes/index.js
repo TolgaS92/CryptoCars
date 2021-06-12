@@ -4,10 +4,8 @@ const apiRoutes = require("./api");
 
 router.use("/api", apiRoutes);
 
-
-/* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
-});
+router.use(function(req, res) {
+    res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  });
 
 module.exports = router;
