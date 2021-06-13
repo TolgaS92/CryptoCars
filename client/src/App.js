@@ -20,23 +20,11 @@ const AuthenticatedRoute = ({ children, ...rest }) => {
 const UnauthenticatedRoutes = () => (
   <>
     <Switch>
-    <Route exact path="/">
+      <Route exact path="/">
         <Main />
       </Route>
-      <Route exact path="/login">
+      <Route path="/login">
         <Login />
-      </Route>
-      {/* <Route path="/login">
-        <Login />
-      </Route> */}
-      <Route exact path="/search">
-        <Search />
-      </Route>
-      <Route exact path="/saved">
-        <Saved />
-      </Route>
-      <Route exact path="/about">
-        <AboutPage />
       </Route>
     </Switch>
   </>
@@ -46,9 +34,14 @@ const AppRoutes = () => {
     <>
       <Suspense fallback={<h1>Loading...</h1>}>
         <Switch>
-          <UnauthenticatedRoutes />
+          <AuthenticatedRoute path="/search">
+            <Search />
+          </AuthenticatedRoute>
           <AuthenticatedRoute path="/saved">
             <Saved />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute path="/about">
+            <AboutPage />
           </AuthenticatedRoute>
           <UnauthenticatedRoutes />
         </Switch>

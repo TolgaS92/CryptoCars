@@ -2,8 +2,6 @@ const express = require("express");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var path = require("path");
-const env = process.env.NODE_ENV || "development";
-const config = require(__dirname + "/config/database.json")[env];
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
@@ -16,10 +14,10 @@ app.use(express.json());
 // match one above, send back React's index.html file.
 if (process.env.NODE_ENV === "production") {
   // Serve any static files
-  app.use(express.static(path.join(__dirname, "../build")))
+  app.use(express.static(path.join(__dirname, "client/build")))
   // Handle React routing, return all requests to React app
   app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "../build", "index.html"))
+    res.sendFile(path.join(__dirname, "./client/build/index.html"))
   })
 }
 // Add routes, both API and view
@@ -37,7 +35,9 @@ mongoose.connect(
     useCreateIndex: true
   }
 );
-
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+});
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
