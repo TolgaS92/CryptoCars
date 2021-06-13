@@ -5,6 +5,7 @@ class SavedResults extends Component {
   state = {
     savedCars: [],
   };
+
   loadCars () {
     API.getCars()
     .then((err) => console.log(err))
@@ -17,9 +18,12 @@ class SavedResults extends Component {
   }
 
   // Function to handle deletion of cars
-  handleDeleteCar = (id) =>  {
+  handleDeleteCar = (id, user) =>  {
     alert("Deleted from the database just need to refresh")
-    API.deleteCar(id)
+    let userInfo = localStorage.getItem("userInfo");
+    userInfo = JSON.parse(userInfo);
+    console.log(userInfo["0"]._id);
+    API.deleteCar(id, user)
       .then(res => this.loadCars(res))
       .catch(err => console.log(err));
   };

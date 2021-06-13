@@ -18,6 +18,11 @@ const Schema = mongoose.Schema;
       type: Number,
       required: [true, "can't be blank"],
     },
+    user_id: {
+      ref: "User",
+      type: Schema.Types.ObjectId,
+      required: true
+    },
     date: { 
       type: Date, default: Date.now 
     }
