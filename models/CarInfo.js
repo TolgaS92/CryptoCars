@@ -17,6 +17,9 @@ const Schema = mongoose.Schema;
     mileage: {
       type: Number,
       required: [true, "can't be blank"],
+    },
+    date: { 
+      type: Date, default: Date.now 
     }
 });
 const CarInfo = mongoose.model("CarInfo", carSchema);

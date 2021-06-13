@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 import Navbar from './components/Navbar';
 import Wrapper from './components/Wrapper';
 import Footer from './components/Footer';
-import Signup from './components/Signup';
+/* import Signup from './components/Signup'; */
 import Search from './pages/Search';
 import Saved from './pages/Saved';
 import Main from './pages/Main';
 import Login from './pages/Login';
 import { AuthProvider, AuthContext } from "./context/AuthContext";
 // import AboutPage from './pages/AboutPage';
-import About from './components/About';
+import AboutPage from './components/About';
 
 const AuthenticatedRoute = ({ children, ...rest }) => {
   const auth = useContext(AuthContext);
@@ -21,23 +21,11 @@ const AuthenticatedRoute = ({ children, ...rest }) => {
 const UnauthenticatedRoutes = () => (
   <>
     <Switch>
-      <Route exact path="/signin">
-        <Login />
-      </Route>
       <Route exact path="/">
         <Main />
       </Route>
-      <Route exact path="/saved">
-        <Saved />
-      </Route>
-      <Route path="/signup">
-        <Signup />
-      </Route>
-      <Route path="/about">
-        <About />
-      </Route>
-      <Route path="/search">
-        <Search />
+      <Route path="/login">
+        <Login />
       </Route>
     </Switch>
   </>
@@ -47,9 +35,14 @@ const AppRoutes = () => {
     <>
       <Suspense fallback={<h1>Loading...</h1>}>
         <Switch>
-          <UnauthenticatedRoutes />
+          <AuthenticatedRoute path="/search">
+            <Search />
+          </AuthenticatedRoute>
           <AuthenticatedRoute path="/saved">
             <Saved />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute path="/about">
+            <AboutPage />
           </AuthenticatedRoute>
           <UnauthenticatedRoutes />
         </Switch>
