@@ -28,7 +28,7 @@
 
 ## Description
 
-- Search the vin number, and get average market price for the vin number, in Crypto Currency and save,delete your car
+- The user can search using their cars VIN number and get the average market price for their car in USD and the current Crypto Currency price. Because the cryto currency market is changing at such a rapid pace, the user can save the searched price eveytime they search to see if the crypto price is increasing or decreasing.
 
 ## Deployed application link
 
@@ -38,13 +38,13 @@
 
 - Create an Account
 
-- Search for the vin number
+- Search using the VIN number
 
-- Check the market value of the car, in USD, BTC, ETH, DOGE coin
+- Check the market value of the car in USD, BTC, ETH, DOGE coin
 
-- Save your searched car into your saved page, or delete it.
+- Save your searched car into your saved page or delete it.
 
-- In future you can sell your car through our website.
+- In the future you can sell your car through our website.
 
 ![Home Page](assets/homepage.JPG)
 
@@ -81,9 +81,9 @@
 
 ## Beginning story
 
-- Description: Crypto Currency is becoming really popular. It's getting into our lives really fast. We thought that would be great to create a website that you can check your car value or others, with the vin number, and sell your car through our website.
-- MVP: User can create an account, and search for a car vin. Save, delete, or check the crypto value of the car
-- reach goals: Sale page for the user.
+- Description: Crypto Currency is becoming really popular and will likely become the currency of the future. We thought that would be great to create a website that you can check your used cars value in crypto and sell your car through our website.
+- MVP: User can create an account and search for a car to see the current market price in usd and crypto. 
+- reach goals: Save the current price to your saved page with the ability to delete old prices.
 
 ## Roles
 
@@ -92,5 +92,5 @@
 - Presentation Guru: Nathan
 - Readme: Tolga
 
-- React - Client Side: Nathan, Rob, Tolga, Morgan
+- React + Front End: Nathan, Rob, Tolga, Morgan
 - Back End: Morgan, Tolga, Nathan and Rob
