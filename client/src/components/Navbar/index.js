@@ -1,16 +1,12 @@
-import React from 'react';
-
+import React from "react";
 
 function Navbar () {
     return(
         <nav className="navbar navbar-expand-lg navbar-light bg-dark text-light">
             <a className="navbar-brand text-warning" href="/">CryptoCars</a>
             <ul className="navbar-nav">
-            <li className="nav-item">
-                <a className="nav-link text-white" href="/signup">Sign Up</a>
-                </li>
-            <li className="nav-item">
-                <a className="nav-link text-white" href="/signin">Sign In</a>
+                <li className="nav-item">
+                <a className="nav-link text-white" href="/login">Login</a>
                 </li>
                 <li className="nav-item">
                 <a className="nav-link text-white" href="/search">Search</a>

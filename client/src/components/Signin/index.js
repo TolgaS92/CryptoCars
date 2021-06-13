@@ -148,24 +148,3 @@ const SignIn = () => {
 };
 
 export default SignIn;
-/* import React from 'react';
-import './style.css';
-
-function Login () {
-    return (
-        <div>
-        <h1 align="center">Sign in</h1>
-            <form className="col-sm-12 sign-in-form" align="center">
-                <label className="col-sm-12">E-mail: </label>
-                <input  className="col-sm-6" />
-                <label className="col-sm-12">Password: </label>
-                <input className="col-sm-6" />
-                <hr className="col-sm-12" />
-                <p>If you don't have an account! <span>Sign Up</span></p>
-                <button className="btn btn-warning btn-outline-dark">Login</button>
-            </form>
-        </div>
-    )
-}
-
-export default Login; */

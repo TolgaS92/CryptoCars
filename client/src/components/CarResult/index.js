@@ -5,9 +5,13 @@ import './style.css';
 
 class CarResult extends Component {
     state = {
-        savedCars: []
+        savedCars: [],
     }
-
+    componentDidMount() {
+        let userInfo = localStorage.getItem("userInfo");
+        userInfo = JSON.parse(userInfo);
+        console.log(userInfo);
+      }
     createCar = (car) => {
         return {
             carModel: car.vehicle,
@@ -16,11 +20,17 @@ class CarResult extends Component {
             mileage: car.mileage
         }
     }
+    
 
-    handleSave = car => {
+    handleSave = (car, user) => {
             alert("Saved!")
             console.log(car);
+            /* console.log(user); */
+            let userInfo = localStorage.getItem("userInfo");
+            userInfo = JSON.parse(userInfo);
+            /* console.log(userInfo["0"]._id); */
             API.saveCar({
+                user_id: userInfo["0"]._id,
                 id: car.id,
                 carModel: car.vehicle,
                 vin: car.vin,
