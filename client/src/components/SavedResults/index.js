@@ -3,8 +3,9 @@ import API from "../../utils/API";
 
 function SavedResults () {
   const [savedCar, setsavedCar] = useState([])
-  const loggedIn = localStorage.getItem("userId");
-
+  const loggedIn = JSON.parse(localStorage.getItem('profile'));
+  console.log(loggedIn.result._id)
+  const loggedUser = loggedIn.result._id
   useEffect(() => {
     loadCars();
   }, []);
@@ -30,7 +31,7 @@ function SavedResults () {
   return(
     <div className="saved-car container mt-5 mb-5">
       <div className="row">
-      {savedCar.filter((car) => car.user_id !== loggedIn)
+      {savedCar.filter((car) => car.user_id === loggedUser)
       .map((car) => (
       <div className="card" key={car._id}>
         <div className="card-body">
