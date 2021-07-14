@@ -1,21 +1,24 @@
 /* const db = require("../models/"); */
-const { models } = require("../models");
+const CarInfo = require("../models/CarInfo.js");
 module.exports = {
     findAll: function(req, res) {
-        models.CarInfo
+        CarInfo
             .find(req.body)
             .sort({ date: -1 })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
     findById: function(req, res) {
-        models.CarInfo
+        CarInfo
             .findById(req.params.id)
             .then(dbModel => res.json(dbModel))
-            .catch(err => res.status(422).json(err));
+            .catch(err => {
+                res.status(422).json(err)
+                console.log(err)
+            });
     },
     create: function(req, res) {
-        models.CarInfo
+        CarInfo
           .create(req.body)
           .then(dbModel => res.json(dbModel))
           .catch(err => {
@@ -24,13 +27,13 @@ module.exports = {
             });
       },
     update: function(req, res) {
-        models.CarInfo
+        CarInfo
             .findOneAndUpdate({ _id: req.params.id }, req.body)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
     remove: function(req, res) {
-        models.CarInfo
+        CarInfo
             .findById({ _id: req.params.id })
             .then(dbModel => dbModel.remove())
             .then(dbModel => res.json(dbModel))
