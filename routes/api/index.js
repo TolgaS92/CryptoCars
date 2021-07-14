@@ -1,10 +1,13 @@
 const router = require('express').Router();
 const userRoutes = require('./users');
 const carRoutes = require('./cars');
-const authPerson = require("./authRoutes");
+const path = require("path");
 
 router.use("/cars", carRoutes);
 router.use('/users', userRoutes);
-router.use("/auth", authPerson);
 
+router.use(function(req, res) {
+    res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  });
+  
 module.exports = router;

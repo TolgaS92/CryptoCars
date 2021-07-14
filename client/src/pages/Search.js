@@ -7,19 +7,26 @@ import CryptoSearch from "../components/CryptoSearch";
 function Search() {
     const [carSearched, setCarSearched] = useState([])
     const [formObject, setFormObject] = useState("")
+    const [crypto, setCrypto]= useState([])
     /* const [loggedIn, setLoggedIn] = useState() */
 
     /* const { id } = params.id */
 
     useEffect(() => {
         loadCars();
+        setTimeout(
+            API.getCrypto() 
+            .then(res => setCrypto(res.data.rates))
+            .catch(err => console.log(err))
+            , 960000);
         }, [])
 
     function loadCars() {
             API.getCarInfo()
-              .then(res => 
-                setCarSearched(res.data/* .map(carData => createCar(carData)) */)
-              )
+              .then(res => {
+                console.log(res.data)
+                setCarSearched(res.data)
+              })
               .catch(err => console.log(err));
           };
 
@@ -32,6 +39,7 @@ function Search() {
         event.preventDefault();
         const search = formObject.search;
         API.getCarInfo(search).then(res => {
+            console.log(res.data)
             setCarSearched((res.data))
         }).catch(err => console.log(err));
       };
@@ -48,10 +56,12 @@ function Search() {
                 <div className="col-sm-4">
                 <CarResult
                 carSearched={carSearched}
+                crypto={crypto}
                 />
                 </div>
                 <div className="col-sm-3">
-                <CryptoSearch />
+                <CryptoSearch
+                />
                 </div>
             </div>
         </div>

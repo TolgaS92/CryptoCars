@@ -1,61 +1,60 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import API from "../../utils/API";
 
-class SavedResults extends Component {
-  state = {
-    savedCars: [],
-  };
+function SavedResults () {
+  const [savedCar, setsavedCar] = useState([])
+  const loggedIn = localStorage.getItem("userId");
 
-  loadCars () {
+  useEffect(() => {
+    loadCars();
+  }, []);
+
+  function loadCars() {
     API.getCars()
-    .then((err) => console.log(err))
-  }
-  // load saved cars when Saved page renders
-  componentDidMount() {
-    API.getCars()
-      .then((savedCars) => this.setState({ savedCars: savedCars }))
-      .catch((err) => console.error(err));
+      .then((res) => {
+        console.log(res.data);
+        setsavedCar(res.data);
+      })
+      .catch((err) => console.log(err));
   }
 
-  // Function to handle deletion of cars
-  handleDeleteCar = (id, user) =>  {
+  function handleDeleteCar (id)   {
     alert("Deleted from the database just need to refresh")
     let userInfo = localStorage.getItem("userInfo");
     userInfo = JSON.parse(userInfo);
     console.log(userInfo["0"]._id);
-    API.deleteCar(id, user)
-      .then(res => this.loadCars(res))
+    API.deleteCar(id)
+      .then(res => this.loadCars())
       .catch(err => console.log(err));
   };
-
-  render() {
-    return (
-        <div>
-            {this.props.car.length ? (
-                    <div>
-                      {this.props.car.map((cars) => (
-                        <div className="card mt-3 mb-3" key={cars._id}>
-                        <div className="card-body">
-                            <h5 className="card-title text-center">
-                                {cars.carModel}
-                            </h5>
-                            <hr />
-                            <p className="card-text text-center">Vin Number: {cars.vin}</p>
-                            <p className="card-text text-center">MileAge: {cars.mileage} miles</p>
-                            <p className="card-text text-center">Average Price: {cars.price} $</p>
-                            <div className="text-center">
-                            <button className="btn btn-primary" onClick={() =>   this.handleDeleteCar(cars._id)}>Delete</button>
-                            </div>
-                            </div>
-                        </div>
-                        ))}
-                        </div>
-                    ) : (
-                        <h3 className="text-center">No Results to Display</h3>
-                )}
+  return(
+    <div className="saved-car container mt-5 mb-5">
+      <div className="row">
+      {savedCar.filter((car) => car.user_id !== loggedIn)
+      .map((car) => (
+      <div className="card" key={car._id}>
+        <div className="card-body">
+          <h5 className="card-title text-center">
+            Car Model: {car.carModel}
+          </h5>
+          <p className="card-text text-center">
+            Vin Number: {car.vin}
+          </p>
+          <p className="card-text text-center">
+            Car Milage:  {car.mileage} Miles
+          </p>
+          <p className="card-text text-center">
+            Car Price: $ {car.price}
+          </p>
+          <div className="text-center">
+          <button className="btn btn-primary" onClick={() =>   handleDeleteCar(car._id)}>Delete</button>
+          </div>
         </div>
-    );
-    }
+      </div>
+      ))}
+      </div>
+    </div>
+  )
 }
 
 export default SavedResults;

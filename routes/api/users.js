@@ -1,19 +1,13 @@
-const usersController = require('../../controllers/usersController');
-const router = require('express').Router();
+const userControllers = require("../../controllers/usersController");
 
-/* GET home page. */
-/* router.get("/", function (req, res, next) {
-    res.render("index", { title: "Express" });
-  }); */
-  
-router.route('/')
-.get(usersController.findAll)
-.post(usersController.create);
+const router = require("express").Router();
 
-router
-  .route("/:id")
-  .get(usersController.findById)
-  .put(usersController.update)
-  .delete(usersController.remove);
 
+router.route("/signin")
+    .post(userControllers.signin);
+router.route("/signup")
+    .post(userControllers.signup);
+
+
+    
 module.exports = router;

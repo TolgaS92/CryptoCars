@@ -3,17 +3,26 @@ import API from '../../utils/API';
 import './style.css';
 import Bitcoin from './image/bitcoin.png';
 
-function CryptoSearch () {
+function CryptoSearch (props) {
     const [crypto, setCrypto]= useState([])
+    /* const [calculate, setCalculate] = useState([]) */
 
     useEffect(() => {
+        /* cryptoPriceCalculator(); */
         setTimeout(
         API.getCrypto() 
         .then(res => setCrypto(res.data.rates))
         .catch(err => console.log(err))
         , 960000);
     }, [])
-
+    /* function cryptoPriceCalculator() {
+        console.log(crypto.BTC)
+        let btc = crypto.BTC;
+        let price = 7000;
+        let btccalculate = Math.floor(price/btc)
+        console.log(btccalculate);
+        setCalculate(btccalculate)
+    } */
     return(
         <div className="crypto-card">
             <div className="card">
