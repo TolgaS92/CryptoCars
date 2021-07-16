@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import API from "../../utils/API";
 
 function SavedResults () {
-  const [savedCar, setsavedCar] = useState([])
+  const [savedCar, setSavedCar] = useState([])
   const loggedIn = JSON.parse(localStorage.getItem('profile'));
-  console.log(loggedIn.result._id)
+  /* console.log(loggedIn.result._id) */
   const loggedUser = loggedIn.result._id
   useEffect(() => {
     loadCars();
@@ -13,17 +13,15 @@ function SavedResults () {
   function loadCars() {
     API.getCars()
       .then((res) => {
-        console.log(res.data);
-        setsavedCar(res.data);
+        /* console.log(res.data.filter(loggedIn.result._id)); */
+        setSavedCar(res.data);
       })
       .catch((err) => console.log(err));
   }
 
   function handleDeleteCar (id)   {
     alert("Deleted from the database just need to refresh")
-    let userInfo = localStorage.getItem("userInfo");
-    userInfo = JSON.parse(userInfo);
-    console.log(userInfo["0"]._id);
+    console.log(loggedIn.result._id);
     API.deleteCar(id)
       .then(res => this.loadCars())
       .catch(err => console.log(err));

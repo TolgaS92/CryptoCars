@@ -4,7 +4,7 @@ import SavedResults from "../components/SavedResults";
 
 
 function Saved(props) {
-  const [car, setCar] = useState({})
+  const [car, setCar] = useState([])
   /* const [userId, setUserId] = useState() */
   /* let logInUser = localStorage.getItem("userId");
   console.log(logInUser); */
