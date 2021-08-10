@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Navbar from './components/Navbar';
-import Wrapper from './components/Wrapper';
 import Footer from './components/Footer';
 /* import Signup from './components/Signup'; */
 import Search from './pages/Search';
@@ -18,7 +17,6 @@ function App() {
     
     <BrowserRouter>
         <Navbar />
-        <Wrapper />
         <Switch>
           <Route exact path="/" component={Main}/>
           <Route exact path="/auth" component={() => (!user ? <Auth /> : <Redirect to="/" />)}></Route>

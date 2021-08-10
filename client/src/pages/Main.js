@@ -40,7 +40,6 @@ function Main () {
                     ) : (
                         <div className="container">
                             <h2 className="text-warning">Create an account or Login to save your search history</h2>
-                            <span> </span>
                             <a className="btn btn-dark btn-outline-warning px-3" href="/auth">
                             Log In
                             </a>
