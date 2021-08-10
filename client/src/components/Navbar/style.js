@@ -4,30 +4,27 @@ import { deepPurple } from '@material-ui/core/colors';
 export default makeStyles((theme) => ({
   appBar: {
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'row',
     justifyContent: 'flex-start',
+    alignItems: 'center',
+    padding: '10px 50px',
+    backgroundColor: 'black'
   },
   image: {
     marginLeft: '15px',
   },
   toolbar: {
-    display: 'inline',
-    justifyContent: 'flex-start',
-    paddingRight: '1024px',
-    margin: '20px',
-    width: '500',
+    display: 'flex',
+    marginLeft: 'auto'
   },
   profile: {
-    display: 'flex',
-    justifyContent: 'flex-start',
-    width: '600px',
-    marginTop: '10px',
+    display: 'flex'
   },
   userName: {
     marginLeft: '10px',
     display: 'flex',
     alignItems: 'center',
-    width: '150px',
+    width: '200px',
   },
   brandContainer: {
     display: 'flex',
@@ -40,16 +37,14 @@ export default makeStyles((theme) => ({
   loggedIn: {
     flexDirection: 'row',
     display: 'flex',
-    marginInline: '250px'
+    marginLeft: '50px'
+    
   },
   button: {
     marginRight: '5px',
     color: 'white'
   },
   signIn: {
-    marginTop: '15px',
     display: 'flex',
-    flexDirection: 'row',
-    marginInline: '250px'
   },
 }));

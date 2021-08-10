@@ -33,9 +33,13 @@ function Navbar () {
 
     return(
         <AppBar className={classes.appBar} position="static" color="inherit">
-        <nav className="navbar navbar-expand-lg navbar-light bg-dark text-light">
-            <a className="navbar-brand text-warning" href="/">CryptoCars</a>  
-            <ul className="navbar-nav">
+            <div className={classes.brandContainer}>
+                <Button component={Link} to="/">
+                <a className="navbar-brand text-warning" href="/">CryptoCars</a>
+                </Button>
+            </div>
+            <div>
+            </div>
             <Toolbar 
             className={classes.toolbar}>
             { user ? (
@@ -61,8 +65,6 @@ function Navbar () {
                     <Button className={classes.signIn} component={Link} to="/auth" variant="contained" color="primary">Login</Button>
                     )}
             </Toolbar>
-            </ul>
-        </nav>
         </AppBar>
     )
 }
