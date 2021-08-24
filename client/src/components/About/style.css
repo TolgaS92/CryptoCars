@@ -1,5 +1,6 @@
 .about-page {
-  padding: 175px;
+  height: 100vh;
+  padding-top: 100px;
 }
 .about {
   font-family: "Biryani", sans-serif;

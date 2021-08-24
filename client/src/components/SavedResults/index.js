@@ -27,11 +27,11 @@ function SavedResults () {
       .catch(err => console.log(err));
   };
   return(
-    <div className="saved-car container mt-5 mb-5">
+    <div className="saved-car container mb-5">
       <div className="row">
       {savedCar?.filter((car) => car.user_id === loggedUser)
       .map((car) => (
-      <div className="card" key={car._id}>
+      <div className="card mt-3" key={car._id}>
         <div className="card-body">
           <h5 className="card-title text-center">
             Car Model: {car.carModel}
