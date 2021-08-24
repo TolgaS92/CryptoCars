@@ -10,9 +10,6 @@ class CarResult extends Component {
         this.createPriceBtc();
         this.createPriceEth();
         this.createPriceDoge();
-        let userInfo = localStorage.getItem("userInfo");
-        userInfo = JSON.parse(userInfo);
-        console.log(userInfo);
       }
     createCar = (car) => {
         return {
@@ -58,7 +55,6 @@ class CarResult extends Component {
     createPriceDoge = () => {
         let carPrice = (this.props.carSearched.mean);
         let cryptoPrice = parseInt(this.props.crypto.DOGE);
-        console.log(this.props.crypto.DOGE)
         return Math.floor(carPrice/cryptoPrice);
     }
     render(){

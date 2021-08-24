@@ -34,9 +34,9 @@ function Navbar () {
     return(
         <AppBar className={classes.appBar} position="static" color="inherit">
             <div className={classes.brandContainer}>
-                <Button component={Link} to="/">
-                <a className="navbar-brand text-warning" href="/">CryptoCars</a>
-                </Button>
+                <Typography className={classes.heading} align="left">
+                    <Button component={Link} to="/" color="secondary">CryptoCars</Button>
+                </Typography>
             </div>
             <div>
             </div>

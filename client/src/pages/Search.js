@@ -24,7 +24,6 @@ function Search() {
     function loadCars() {
             API.getCarInfo()
               .then(res => {
-                console.log(res.data)
                 setCarSearched(res.data)
               })
               .catch(err => console.log(err));

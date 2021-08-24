@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
+import {  Typography, Button } from '@material-ui/core';
 import './style.css';
 import Crypto from '../components/Crypto'
 // import Signup from '../components/Signup';
@@ -33,16 +34,16 @@ function Main () {
                     <h2 className="text-warning">
                         By using your VIN number!
                     </h2>
-                    <a className="btn btn-dark btn-outline-warning px-3" href="/search">
-                        Check Value
-                    </a>
+                    <Typography align="left">
+                            <Button className="btn btn-dark btn-outline-warning px-3" component={Link} to="/search" variant="contained" color="primary">Check Value</Button>
+                    </Typography>
                     </div>
                     ) : (
                         <div className="container">
                             <h2 className="text-warning">Create an account or Login to save your search history</h2>
-                            <a className="btn btn-dark btn-outline-warning px-3" href="/auth">
-                            Log In
-                            </a>
+                            <Typography align="left">
+                            <Button className="btn btn-dark btn-outline-warning px-3" component={Link} to="/auth" variant="contained" color="primary">Log In</Button>
+                            </Typography>
                         </div>
                 )}           
         </section>

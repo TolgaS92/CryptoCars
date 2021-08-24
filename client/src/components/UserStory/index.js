@@ -6,7 +6,7 @@ function UserStory() {
     return (
         <section className="bg-light about-page">
             <div className="container">
-                <div className="row justify-content-center">
+                <div className="row intro">
                     <div className="col-lg-8 text-center">
                         <h2 className="text-dark text-center mt-0 about">Why CryptoCars?</h2>
                         <hr className="divider my-4" color="#408eff" />
