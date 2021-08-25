@@ -3,22 +3,22 @@ import API from "../utils/API";
 import SavedResults from "../components/SavedResults";
 
 
-function Saved(props) {
+function Saved() {
   const [car, setCar] = useState([])
   /* const [userId, setUserId] = useState() */
-  /* let logInUser = localStorage.getItem("userId");
-  console.log(logInUser); */
-  
+  const loggedIn = JSON.parse(localStorage.getItem('profile'));
+  const loggedUser = loggedIn.result._id
   useEffect(() => {
     /* let logInUser = localStorage.getItem("userId");
     setUserId(logInUser)
     console.log(logInUser); */
     API.getCars()
       .then(res => {
-        setCar(res.data)
+        console.log(res.data.filter((car) => car.user_id === loggedUser))
+        setCar(res.data.filter((car) => car.user_id === loggedUser));
       })
       .catch(err => console.log(err));
-  }, [])
+  }, [loggedUser])
 
   return (
         <div>
