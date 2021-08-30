@@ -14,7 +14,8 @@ function Saved() {
     console.log(logInUser); */
     API.getCars()
       .then(res => {
-        setCar(res?.data?.filter((car) => car.user_id === loggedUser));
+        setCar(res.data.filter((car) => car.user_id === loggedUser));
+        console.log(res.data)
       })
       .catch(err => console.log(err));
   }, [loggedUser])
