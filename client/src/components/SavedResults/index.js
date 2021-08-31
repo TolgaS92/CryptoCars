@@ -4,26 +4,21 @@ import API from "../../utils/API";
 function SavedResults () {
   const [savedCar, setSavedCar] = useState([])
   const loggedIn = JSON.parse(localStorage.getItem('profile'));
-  /* console.log(loggedIn.result._id) */
   const loggedUser = loggedIn.result._id
+  
   useEffect(() => {
-    loadCars();
-  }, []);
-
-  function loadCars() {
     API.getCars()
       .then((res) => {
         setSavedCar(res.data.filter((car) => car.user_id === loggedUser));
-        console.log(savedCar)
       })
       .catch((err) => console.log(err));
-  }
+  }, [loggedUser]);
 
   function handleDeleteCar (id)   {
     alert("Deleted from the database just need to refresh")
     console.log(loggedIn.result._id);
     API.deleteCar(id)
-      .then(res => this.loadCars())
+      .then(res => console.log(res))
       .catch(err => console.log(err));
   };
   return(
