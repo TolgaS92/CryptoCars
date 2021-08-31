@@ -47,4 +47,10 @@ export default makeStyles((theme) => ({
   signIn: {
     display: 'flex',
   },
+  logo: {
+    height: '50px',
+    width: '50px',
+    marginRight: '10px',
+    zoom: '125%'
+  }
 }));

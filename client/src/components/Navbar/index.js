@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { Toolbar, AppBar, Typography, Avatar, Button } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
+import Logo from './logo/CryptoCars.PNG'
 import decode from 'jwt-decode';
 import useStyles from './style';
 
@@ -35,7 +36,9 @@ function Navbar () {
         <AppBar className={classes.appBar} position="static" color="inherit">
             <div className={classes.brandContainer}>
                 <Typography className={classes.heading} align="left">
-                    <Button component={Link} to="/" color="secondary">CryptoCars</Button>
+                    <Button component={Link} to="/" color="secondary">
+                        <img src={Logo} alt='logo' className={classes.logo} /> 
+                        CryptoCars</Button>
                 </Typography>
             </div>
             <div>
