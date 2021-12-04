@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+/* import Footer from './components/Footer'; */
 /* import Signup from './components/Signup'; */
 import Search from './pages/Search';
 import Saved from './pages/Saved';
@@ -24,7 +24,7 @@ function App() {
           <Route exact path="/saved" component={Saved}/>
           <Route exact path="/about" component={AboutPage}/>
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
     </BrowserRouter>
   );
 }
